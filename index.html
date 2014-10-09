@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Dinder - For all your dinner needs!</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700' rel='stylesheet' type='text/css'>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="src/knob/jquery.knob.js"></script>
+		<script>
+			var domain_endings = ['.com', '.net', '.org', '.co.uk', '.io', '.edu'];
+			$(document).ready(function() {
+				var $header = $('#header');
+				$(window).scroll(function() {
+					var yPos = -($(window).scrollTop() / 2);
+					var newPos = '50% ' + yPos + 'px';
+					var blur = 0; //
+					$header.css({ backgroundPosition: newPos});
+					var $totalScroll = $(window).scrollTop() + $(window).height();
+					if ($totalScroll == $(document).height()) {
+						//pop the button
+					}
+				}); 
+				$('#arrow_button').click(function() {
+					$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+				});
+				$('#subscribe input').click(function() {
+					$(this).val('');
+				});
+				$('#subscribe input').on('input', function() {
+					var email = $('#subscribe input').val();
+					$("#user_email").html(email);
+					for (var i = 0; i < domain_endings.length; i++) {
+						var ending = domain_endings[i];
+						var str_length = ending.length;
+						if (email.substr(email.length - str_length) == ending) {
+							emailSubscribe();
+						}
+					}
+				});
+				$("#blue_box").click(function() {
+					emailSubscribe();
+				});
+			});
+			function emailSubscribe() {
+				$('#blue_box').animate({
+					width: 163,
+					border: 1
+				});
+				$('#blue_box').html("<p>Subscribed!</p>");
+				$('#user_email').animate({
+					opacity: 1,
+					top: -13
+				});
+				$('#subscribe input').animate({
+					opacity: 0
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<div id="header_main">
+				<div id="banner">
+					<div id="banner1" class="banner">GET &nbsp;<span class="bold">YOUR</span> &nbsp;DINNER</div><div id="banner2" class="banner">NOW &nbsp;WITH &nbsp;DINDER</div>
+				</div>
+				<div id="wheel">
+					<img src="images/logo.png" />
+				</div>
+			</div>
+			<a href="#" id="arrow_button">
+				<img src="images/arrow_button.png" />
+			</a>
+		</div>
+		<div id="content">
+			<div id="container">
+				<div id="logo">
+					<div id="main_buttons">
+						<a href="create" id="button1">
+							<img src="images/button1.png" />
+						</a>
+						<div id="button2">
+							<img src="images/button2.png" />
+						</div>
+					</div>
+				</div>
+				<div id="copy">
+				</div>
+				<div id="middle_section">
+					<div id="middle_section_content" id="simplify">
+						<div id="middle_section_content_items">
+							<div class="middle_item">
+								<div class="middle_img">
+									<img src="images/fork_icon.png" />
+								</div>
+								<div class="middle_img over_img">
+									<img src="images/fork_icon.png" />
+								</div>
+								<h1>Example copy #1</h1>
+								<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h2>
+								<div class="learn_more">Learn More!</div>
+							</div>
+							<div class="middle_item" id="compartmentalize">
+								<div class="middle_img">
+									<img src="images/spoon_icon.png" />
+								</div>
+								<div class="middle_img over_img">
+									<img src="images/spoon_icon.png" />
+								</div>
+								<h1>Wtf goes here??</h1>
+								<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h2>
+								<div class="learn_more">Learn More!</div>
+							</div>
+							<div class="middle_item" id="reward">
+								<div class="middle_img">
+									<img src="images/knife_icon.png" />
+								</div>
+								<div class="middle_img over_img">
+									<img src="images/knife_icon.png" />
+								</div>
+								<h1>????</h1>
+								<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h2>
+								<div class="learn_more">Learn More!</div>
+							</div>
+						</div>
+						<div id="iphone">
+							<img id="stock_photo" src="images/stock_photo.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="subscribe">
+				Want updates on Dinder? Join the subscriber list!
+				<div id="subscribe_input">
+					<input type="text" value="Your email, please!"></input>
+					<a href="#" id="blue_box">
+						<img src="images/subscribe_circle.png" />
+					</a>
+					<div id="user_email"></div>
+			</div>
+		</div>
+	</body>
+</html>

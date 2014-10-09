@@ -1,0 +1,129 @@
+@font-face {
+	font-family: Bebas Neue;
+	src: url('../src/BebasNeue Book.otf');
+}
+@font-face {
+	font-family: Bebas Neue;
+	font-weight: bold;
+	src: url('../src/BebasNeue thin.otf');
+}
+@font-face {
+	font-family: Bebas Neue;
+	font-weight: 100;
+	src: url('../src/BebasNeue light.otf');
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #fff;
+}
+#header {
+	width: 100%;
+	height: 112px;
+	background: #f2f2f2;
+	position: relative;
+}
+#header_main {
+	width: 700px;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+#header_main * {
+	vertical-align: middle;
+}
+#nav_options {
+	display: inline;
+	height: 100%;
+	margin-top: 205px;
+	margin-left: 20px;
+}
+.nav_option {
+	color: #D63A3A;
+	font-family: Comfortaa;
+	font-weight: 700;
+	font-size: 20px;
+	margin: 10px;
+	text-decoration: none;
+}
+#content {
+	width: 471px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+.create_node {
+	text-align: center;
+}
+.create_node_title {
+	color: #595959;
+	font-family: Comfortaa;
+	font-weight: 700;
+	text-align: left;
+	font-size: 25px;
+}
+.create_node_title span {
+	color: #595959;
+	font-family: Comfortaa;
+	font-weight: 400;
+	text-align: right;
+	float: right;
+	font-size: 17px;
+	vertical-align: bottom;
+}
+.create_node_break {
+	width: 471px;
+	height: 16px;
+	background: url('../images/bar_shadow.png') no-repeat center;
+	clear: both;
+}
+.create_node_content {
+	display: none;
+	padding: 25px;
+	position: relative;
+}
+.create_node_number {
+	width: 28px;
+	height: 28px;
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	background: #595959;
+	color: #fff;
+	font-size: 20px;
+	font-family: Comfortaa;
+	font-weight: 400;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 2px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.next_button {
+	width: 125px;
+	height: 45px;
+	background: url("../images/next_button.png") no-repeat center;
+	position: absolute;
+	bottom: 10px;
+	right: 0px;
+}
+.next_button:hover {
+	cursor: pointer;
+}
+.complete_button {
+	width: 125px;
+	height: 45px;
+	background: url("../images/complete_button.png") no-repeat center;
+	position: absolute;
+	bottom: 10px;
+	right: 0px;
+}
+.complete_button:hover {
+	cursor: pointer;
+}
+#sb_cont {
+	width: 471px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 20px;
+}
